@@ -5,15 +5,19 @@ public class Product {
     private String name;
     private String description;
     private Double price;
+    private String producer;
+
+
 
     public Product() {
     }
 
-    public Product(Integer id, String name, String description, Double price) {
+    public Product(Integer id, String name, String description, Double price, String producer) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.producer = producer;
     }
 
     public Integer getId() {
@@ -46,5 +50,13 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
     }
 }

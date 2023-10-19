@@ -14,9 +14,9 @@ public class ProductRepository implements IProductRepository{
     private final static List<Product> products;
     static {
         products = new ArrayList<>();
-        products.add(new Product(1,"Thịt bò","Sạch, tươi, ngon, ",100000.0));
-        products.add(new Product(2,"Sữa","Đủ chất dinh dưỡng",20000.0));
-        products.add(new Product(3,"Coffee","Loại bình dân",30000.0));
+        products.add(new Product(1,"Beef","clean, fresh, delicious ",100000.0, "Japan"));
+        products.add(new Product(2,"Milk","nutritious",20000.0,"American"));
+        products.add(new Product(3,"Coffee","popular type",30000.0,"Viet Nam"));
 
     }
     @Override
