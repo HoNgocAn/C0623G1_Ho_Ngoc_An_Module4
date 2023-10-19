@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4a48536-50e0-4c34-871b-25082c42331a" name="Changes" comment="" />
+    <list default="true" id="f4a48536-50e0-4c34-871b-25082c42331a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss2_spring_controller/bai_tap/sandwich",
+    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss4_databinding_form/bai_tap/mail",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -163,6 +165,7 @@
       <workItem from="1697512277748" duration="6000" />
       <workItem from="1697512316483" duration="156000" />
       <workItem from="1697618287712" duration="117000" />
+      <workItem from="1697620728620" duration="1122000" />
     </task>
     <servers />
   </component>

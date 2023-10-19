@@ -11,6 +11,6 @@ public interface IProductService {
     void addProduct(Product product);
     void updateProduct(Integer id, Product product);
     void deleteProduct(Integer id);
-    Product getProduct(Integer id);
+    Product findProduct(Integer id);
     List<Product> searchProduct(String nameProduct);
 }

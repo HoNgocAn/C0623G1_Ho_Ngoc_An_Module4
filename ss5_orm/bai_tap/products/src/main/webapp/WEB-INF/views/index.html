@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<table style="width: 50%; text-align: center">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Producer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product,loop : ${products}">
+        <th th:text="${loop.count}" ></th>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.producer}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
