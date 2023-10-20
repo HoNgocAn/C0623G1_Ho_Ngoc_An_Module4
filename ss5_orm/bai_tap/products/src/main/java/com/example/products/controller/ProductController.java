@@ -5,10 +5,7 @@ import com.example.products.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -34,5 +31,15 @@ public class ProductController {
     public ModelAndView saveProduct(@ModelAttribute Product product){
         productService.addProduct(product);
         return new ModelAndView("redirect:/");
+    }
+    @GetMapping("/product/{id}/view")
+    public ModelAndView showViewProduct(@PathVariable Integer id){
+        Product product = productService.findProduct(id);
+        return new ModelAndView("view","product", product);
+    }
+    @GetMapping("/product/{id}/delete")
+    public String deleteProduct(@PathVariable Integer id){
+        productService.deleteProduct(id);
+        return "redirect:/";
     }
 }
