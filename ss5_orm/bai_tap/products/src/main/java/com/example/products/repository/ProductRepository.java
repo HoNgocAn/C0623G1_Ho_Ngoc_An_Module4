@@ -2,9 +2,12 @@ package com.example.products.repository;
 
 import com.example.products.model.Product;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+import static com.example.products.repository.ConnectionUtil.sessionFactory;
 
 @Repository
 public class ProductRepository implements IProductRepository{
@@ -13,11 +16,29 @@ public class ProductRepository implements IProductRepository{
         Session session = null;
         List<Product> productList = null;
         try {
-            session = ConnectionUtil.sessionFactory.openSession();
+            session = sessionFactory.openSession();
             productList = session.createQuery(" from Product").getResultList();
         } finally {
             session.close();
         }
         return productList;
+    }
+
+    @Override
+    public void addProduct(Product product) {
+        Session session = null;
+        Transaction transaction = null;
+        try {
+           session = ConnectionUtil.sessionFactory.openSession();
+           transaction = session.beginTransaction();
+           session.save(product);
+           transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+        } finally {
+            if (session != null){
+                session.close();
+            }
+        }
     }
 }
