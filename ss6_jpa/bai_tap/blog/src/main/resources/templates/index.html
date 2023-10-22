@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head >
+    <title>ListBlog</title>
+</head>
+<body>
+
+<div class="container">
+    <a class="btn btn-primary my-3" th:href="@{/blog/add}" role="button">Add new BLog</a>
+    <table class="table mt-3">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">BlogName</th>
+            <th scope="col">summary</th>
+            <th scope="col">Author</th>
+            <th scope="col">TimePost</th>
+            <th scope="col" colspan="3">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog,loop : ${blog}">
+            <th th:text="${loop.count}" scope="row"></th>
+            <td th:text="${blog.blogName}"></td>
+            <td th:text="${blog.summary}"></td>
+            <td th:text="${blog.author}"></td>
+            <td th:text="${blog.timePost}"></td>
+            <td><a th:href="@{/blog/__${blog.id}__/view}">View</a></td>
+            <td><a th:href="@{/blog/__${blog.id}__/edit}">Edit</a></td>
+            <td>
+                <button th:onclick="'javascript:sendData(\'' + ${blog.id}+'\',\''+${blog.blogName} + '\');'" type="button" class="btn btn-danger"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Detele
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalLabel">Notification</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body-delete">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a role="button" id="del-product" class="btn btn-danger">Confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function sendData(id, name) {
+        console.log(id);
+        console.log(name);
+        document.getElementById("modal-body-delete").innerHTML = "You definitely want to delete the product " + name;
+        document.getElementById("del-product").href = "/product/" + id + "/delete";
+    }
+</script>
+</body>
+</html>

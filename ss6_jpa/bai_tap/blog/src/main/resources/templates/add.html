@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head >
+  <title>Add-Blog</title>
+</head>
+<body>
+<h2 class="my-5">Add new Blog</h2>
+<form method="post" th:object="${blog}">
+  <table>
+    <tr>
+      <td>Blog Name</td>
+      <td>
+        <input type="text" th:field="${blog.blogName}">
+      </td>
+    </tr>
+    <tr>
+      <td>Summary</td>
+      <td>
+        <input type="text" th:field="${blog.summary}">
+      </td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>
+        <textarea th:field="${blog.content}" ></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td>
+        <input type="text" th:field="${blog.author}">
+      </td>
+    </tr>
+    <tr>
+      <td>Time Post</td>
+      <td>
+        <input type="text" th:field="${blog.timePost}" >
+      </td>
+    </tr>
+  </table>
+  <tr>
+    <button class="btn btn-primary" type="submit">Add Blog</button>
+  </tr>
+</form>
+</body>
+</html>
