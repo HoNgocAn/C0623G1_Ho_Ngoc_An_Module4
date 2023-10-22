@@ -21,14 +21,14 @@
         <tbody>
         <tr th:each="blog,loop : ${blog}">
             <th th:text="${loop.count}" scope="row"></th>
-            <td th:text="${blog.blogName}"></td>
+            <td th:text="${blog.name}"></td>
             <td th:text="${blog.summary}"></td>
             <td th:text="${blog.author}"></td>
             <td th:text="${blog.timePost}"></td>
             <td><a th:href="@{/blog/__${blog.id}__/view}">View</a></td>
             <td><a th:href="@{/blog/__${blog.id}__/edit}">Edit</a></td>
             <td>
-                <button th:onclick="'javascript:sendData(\'' + ${blog.id}+'\',\''+${blog.blogName} + '\');'" type="button" class="btn btn-danger"
+                <button th:onclick="'javascript:sendData(\'' + ${blog.id}+'\',\''+${blog.name} + '\');'" type="button" class="btn btn-danger"
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Detele
                 </button>

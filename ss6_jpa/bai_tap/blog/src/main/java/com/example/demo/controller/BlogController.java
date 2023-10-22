@@ -20,7 +20,7 @@ public class BlogController {
     }
 
     @GetMapping("/blog/{id}/view")
-    public ModelAndView showViewBlog(@PathVariable int id){
+    public ModelAndView showViewBlog(@PathVariable Integer id){
         Blog blog = blogService.findById(id);
         return new ModelAndView("view","blog", blog);
     }
@@ -35,7 +35,7 @@ public class BlogController {
         return new ModelAndView("redirect:/");
     }
     @GetMapping("/blog/{id}/delete")
-    public String deleteBlog(@PathVariable int id){
+    public String deleteBlog(@PathVariable Integer id){
         blogService.deleteBlog(id);
         return "redirect:/";
     }

@@ -8,8 +8,8 @@ public class Blog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String blogName;
+    private Integer id;
+    private String name;
     private String summary;
 
     private String content;
@@ -17,40 +17,41 @@ public class Blog {
 
     private String timePost;
 
+
     public Blog() {
     }
 
-    public Blog(String blogName, String summary, String content, String author, String timePost) {
-        this.blogName = blogName;
+    public Blog(String name, String summary, String content, String author, String timePost) {
+        this.name = name;
         this.summary = summary;
         this.content = content;
         this.author = author;
         this.timePost = timePost;
     }
 
-    public Blog(int id, String blogName, String summary, String content, String author, String timePost) {
+    public Blog(Integer id, String name, String summary, String content, String author, String timePost) {
         this.id = id;
-        this.blogName = blogName;
+        this.name = name;
         this.summary = summary;
         this.content = content;
         this.author = author;
         this.timePost = timePost;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getBlogName() {
-        return blogName;
+    public String getName() {
+        return name;
     }
 
-    public void setBlogName(String blogName) {
-        this.blogName = blogName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSummary() {

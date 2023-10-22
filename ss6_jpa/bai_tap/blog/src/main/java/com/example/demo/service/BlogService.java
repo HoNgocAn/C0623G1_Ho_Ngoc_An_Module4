@@ -20,7 +20,7 @@ public class BlogService implements IBlogService{
     }
 
     @Override
-    public Blog findById(int id) {
+    public Blog findById(Integer id) {
         return blogRepository.findById(id).orElse(null);
     }
 
@@ -30,7 +30,7 @@ public class BlogService implements IBlogService{
     }
 
     @Override
-    public void deleteBlog(int id) {
+    public void deleteBlog(Integer id) {
         blogRepository.deleteById(id);
     }
 }
