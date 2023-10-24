@@ -6,13 +6,13 @@
 <body>
 
 <div class="container">
-    <a class="btn btn-primary my-3" th:href="@{/blog/add}" role="button">Add new BLog</a>
-    <table class="table mt-3">
+    <a class="btn btn-primary my-3" th:href="@{/blog/add}" role="button">Add new BLog</a></br></br>
+    <table class="table mt-3" style="width: 60%">
         <thead>
         <tr>
-            <th scope="col">Id</th>
+            <th scope="col">STT</th>
             <th scope="col">BlogName</th>
-            <th scope="col">summary</th>
+            <th scope="col">Summary</th>
             <th scope="col">Author</th>
             <th scope="col">TimePost</th>
             <th scope="col" colspan="3">Action</th>
@@ -28,7 +28,7 @@
             <td><a th:href="@{/blog/__${blog.id}__/view}">View</a></td>
             <td><a th:href="@{/blog/__${blog.id}__/edit}">Edit</a></td>
             <td>
-                <button th:onclick="'javascript:sendData(\'' + ${blog.id}+'\',\''+${blog.name} + '\');'" type="button" class="btn btn-danger"
+                <button th:attr="onclick=|sendData('${blog.id}','${blog.name}')|" type="button" class="btn btn-danger"
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Detele
                 </button>
@@ -36,6 +36,16 @@
         </tr>
         </tbody>
     </table>
+    <nav aria-label="Page navigation example">
+        <ol class="pagination justify-content-center">
+            <li th:class="${blog.hasPrevious() ? 'page-item' : 'page-item disabled'}">
+                <a class="page-link" th:href="@{/blog/list/(page=${blog.number - 1})}">Last</a>
+            </li>
+            <li th:class="${blog.hasNext() ? 'page-item' : 'page-item disabled'}">
+                <a class="page-link" th:href="@{/blog/list/(page=${blog.number + 1})}">Next</a>
+            </li>
+        </ol>
+    </nav>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -58,8 +68,8 @@
     function sendData(id, name) {
         console.log(id);
         console.log(name);
-        document.getElementById("modal-body-delete").innerHTML = "You definitely want to delete the product " + name;
-        document.getElementById("del-product").href = "/product/" + id + "/delete";
+        document.getElementById("modal-body-delete").innerHTML = "You definitely want to delete the blog " + name;
+        document.getElementById("del-product").href = "/blog/" + id + "/delete";
     }
 </script>
 </body>

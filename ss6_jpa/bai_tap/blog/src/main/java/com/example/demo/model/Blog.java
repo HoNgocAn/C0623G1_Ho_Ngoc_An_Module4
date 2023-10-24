@@ -1,41 +1,41 @@
 package com.example.demo.model;
 
 
+import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "blog")
 public class Blog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "blogName")
     private String name;
     private String summary;
 
     private String content;
     private String author;
-
     private String timePost;
+
+    @ManyToOne
+    @JoinColumn(name = "id_category", referencedColumnName = "id")
+    private Category category;
 
 
     public Blog() {
     }
 
-    public Blog(String name, String summary, String content, String author, String timePost) {
-        this.name = name;
-        this.summary = summary;
-        this.content = content;
-        this.author = author;
-        this.timePost = timePost;
-    }
-
-    public Blog(Integer id, String name, String summary, String content, String author, String timePost) {
+    public Blog(Integer id, String name, String summary, String content, String author, String timePost, Category category) {
         this.id = id;
         this.name = name;
         this.summary = summary;
         this.content = content;
         this.author = author;
         this.timePost = timePost;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -84,5 +84,13 @@ public class Blog {
 
     public void setTimePost(String timePost) {
         this.timePost = timePost;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
