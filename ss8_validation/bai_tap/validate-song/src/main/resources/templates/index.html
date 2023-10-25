@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head >
+  <title>ListBlog</title>
+</head>
+<body>
+
+<div class="container">
+  <a class="btn btn-primary my-3" th:href="@{/song/add}" role="button">Add new Song</a></br></br>
+  <table class="table mt-3" style="width: 60%">
+    <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Singer</th>
+      <th scope="col">Type</th>
+      <th scope="col" colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song,loop : ${song}">
+      <th th:text="${loop.count}" scope="row"></th>
+      <td th:text="${song.name}"></td>
+      <td th:text="${song.singer}"></td>
+      <td th:text="${song.type}"></td>
+      <td><a th:href="@{/song/__${song.id}__/edit}">Edit</a></td>
+      <td>
+        <button th:attr="onclick=|sendData('${song.id}','${song.name}')|" type="button" class="btn btn-danger"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Detele
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">Notification</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body-delete">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a role="button" id="del-product" class="btn btn-danger">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function sendData(id, name) {
+    console.log(id);
+    console.log(name);
+    document.getElementById("modal-body-delete").innerHTML = "You definitely want to delete the blog " + name;
+    document.getElementById("del-product").href = "/song/" + id + "/delete";
+  }
+</script>
+</body>
+</html>
