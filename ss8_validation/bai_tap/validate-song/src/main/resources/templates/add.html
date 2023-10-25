@@ -12,23 +12,24 @@
             <td>
                 <input type="text" th:field="${song.name}">
             </td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
         </tr>
         <tr>
             <td>Singer</td>
             <td>
                 <input type="text" th:field="${song.singer}">
             </td>
+            <td th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}">Name Error</td>
         </tr>
         <tr>
             <td>Type</td>
             <td>
                 <input type="text" th:field="${song.type}">
             </td>
+            <td th:if="${#fields.hasErrors('type')}" th:errors="*{type}">Name Error</td>
         </tr>
     </table>
     <tr>
         <button class="btn btn-primary" type="submit">Add Song</button>
     </tr>
 </form>
-</body>
-</html>
