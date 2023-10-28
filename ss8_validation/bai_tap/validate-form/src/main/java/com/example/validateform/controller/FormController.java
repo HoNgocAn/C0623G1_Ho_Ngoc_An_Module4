@@ -1,7 +1,9 @@
 package com.example.validateform.controller;
 
+import com.example.validateform.dto.FormDTO;
 import com.example.validateform.model.Form;
 import com.example.validateform.service.IFormService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,17 +23,18 @@ public class FormController {
 
     @GetMapping("/form")
     public ModelAndView showForm() {
-        return new  ModelAndView("/index", "form" , new Form());
+        return new  ModelAndView("/index", "form" , new FormDTO());
     }
 
     @PostMapping("/validateForm")
-    public ModelAndView createFrom(@Valid @ModelAttribute("form") Form form, BindingResult bindingResult) {
-        ModelAndView modelAndView = new ModelAndView("/result");
-        if(bindingResult.hasErrors()){
-            modelAndView = new ModelAndView("/index");
-            return modelAndView;
+    public ModelAndView createFrom(@Valid @ModelAttribute ("form") FormDTO formDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return new ModelAndView("/index","form", formDTO);
+        } else {
+            Form form = new Form();
+            BeanUtils.copyProperties(formDTO,form);
+            formService.save(form);
+            return new ModelAndView("/result","form",form);
         }
-        formService.save(form);
-        return modelAndView;
     }
 }

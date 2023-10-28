@@ -17,26 +17,23 @@ public class Form {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 2, max = 45)
     private String firstName;
 
-    @Size(min = 2, max = 45)
+
     private String lastName;
 
-    @Min(18)
-    private int age;
+    private String age;
 
-    @Email
+
     private String email;
 
-    @Size(min = 10, max = 11)
-    @Min(0)
     private String phoneNumber;
 
     public Form() {
     }
 
-    public Form( @Size(min = 2, max = 45) String firstName, @Size(min = 2, max = 45) String lastName,  @Min(18) int age, @Email String email, @Size(min = 10, max = 11)@Min(0) String phoneNumber) {
+    public Form(Long id, String firstName, String lastName, String age, String email, String phoneNumber) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -68,11 +65,11 @@ public class Form {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

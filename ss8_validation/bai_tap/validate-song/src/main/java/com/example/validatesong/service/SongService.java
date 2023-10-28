@@ -30,7 +30,7 @@ public class SongService implements ISongService{
     }
 
     @Override
-    public void editSong(Integer id, Song song) {
+    public void editSong(Integer id, Song song ) {
         songRepository.save(song);
     }
 }

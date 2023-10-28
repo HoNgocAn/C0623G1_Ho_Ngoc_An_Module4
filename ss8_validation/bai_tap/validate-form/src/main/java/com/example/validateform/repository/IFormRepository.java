@@ -4,4 +4,5 @@ import com.example.validateform.model.Form;
 
 public interface IFormRepository {
     void save (Form form);
+
 }

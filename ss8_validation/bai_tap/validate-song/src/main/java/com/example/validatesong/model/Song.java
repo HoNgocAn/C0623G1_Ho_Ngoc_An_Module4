@@ -13,25 +13,19 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message = "{error.name.empty}")
-    @Size(max =800 , message = "Do not enter more than 800 characters")
-    @Pattern(regexp = "^[a-zA-Z0-9 ]{1,}$", message = "{error.name.pattern}")
+
     private String name;
 
-    @NotEmpty (message = "{error.name.empty}")
-    @Size(max =300,message = "Do not enter more than 300 characters")
-    @Pattern(regexp = "^[a-zA-Z0-9 ]{1,}$" , message = "{error.name.pattern}")
+
     private String singer;
 
-    @NotEmpty (message = "{error.name.empty}")
-    @Size(max =1000 ,message = "Do not enter more than 1000 characters")
-    @Pattern(regexp = "^[a-zA-Z0-9 \\,]{1,}$" , message = "{error.name.pattern}")
+
     private String type;
 
     public Song() {
     }
 
-    public Song( @NotEmpty @Size(max =800) String name, @NotEmpty @Size(max =300) String singer, @NotEmpty @Size(max =1000) String type) {
+    public Song( String name, String singer, String type) {
         this.name = name;
         this.singer = singer;
         this.type = type;
