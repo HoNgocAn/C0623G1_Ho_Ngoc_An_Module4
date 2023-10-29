@@ -43,4 +43,26 @@ public class ProductController {
         cart.addProduct(productOptional.get());
         return "redirect:/shop";
     }
+
+    @GetMapping("/remove/{id}")
+    public String removeToCart(@PathVariable Long id,
+                            @ModelAttribute Cart cart,
+                            @RequestParam("action") String action) {
+        Optional<Product> productOptional = productService.findById(id);
+        if (!productOptional.isPresent()) {
+            return "/error_404";
+        }
+        if (action.equals("remove")) {
+            cart.removeProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+        cart.addProduct(productOptional.get());
+        return "redirect:/shop";
+    }
+    @GetMapping("/product/{id}/view")
+    public ModelAndView showViewProduct(@PathVariable Long id){
+        Product product = productService.findById(id).get();
+        return new ModelAndView("view","product", product);
+    }
+
 }

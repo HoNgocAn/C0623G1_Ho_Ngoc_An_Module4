@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 <p>
   <a href="/shop">Shop</a>
 </p>
-<h1>Your Cart</h1>
+<h3>Your Cart</h3>
+
 <form th:action="@{/shop}" th:object="${cart}" method="post">
-  <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>
-  <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>
-  <table border="1">
+  <h4>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h4>
+  <h4>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h4>
+  <table class="table mt-3" style="width: 60%; text-align: center">
     <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th scope="col">Item</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
     </tr>
     <tr th:each="product: ${cart.products}">
       <td th:text="${product.getKey().name}"></td>
       <td>
-        <a id="decrease_button" th:text="${'-'}"></a>
+        <a id="decrease_button" th:href="@{/remove/__${product.getKey().id}__(action='remove')}"
+           th:text="${'-'}"></a>
         <span th:text="${product.getValue()}"></span>
         <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"
            th:text="${'+'}"></a>
