@@ -23,7 +23,7 @@
       <th th:text="${book.id}" scope="row"></th>
       <td th:text="${book.name}"></td>
       <td th:text="${book.count}"></td>
-      <td><a th:href="@{/order/${id}(id=${book.id})}" class="btn btn-warning">Order</a></td>
+      <td><a th:href="@{/oder/{id}(id=${book.id})}" class="btn btn-warning">Oder</a></td>
     </tr>
     </tbody>
   </table>
