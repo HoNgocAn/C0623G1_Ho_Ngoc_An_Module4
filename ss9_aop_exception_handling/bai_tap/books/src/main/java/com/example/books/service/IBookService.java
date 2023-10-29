@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface IBookService {
     List<Book> findAllBook();
-    void creatBook(Book book);
-    void updateBook(Book book);
-    Book getBook(Integer id);
+
+    Book findByIdBook(long id);
+
+    Book saveBook(Book book);
 }

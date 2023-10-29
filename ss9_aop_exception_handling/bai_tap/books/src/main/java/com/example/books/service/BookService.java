@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class BookService implements IBookService{
     @Autowired
@@ -19,17 +18,12 @@ public class BookService implements IBookService{
     }
 
     @Override
-    public void creatBook(Book book) {
-        bookRepository.save(book);
-    }
-
-    @Override
-    public void updateBook(Book book) {
-        bookRepository.save(book);
-    }
-
-    @Override
-    public Book getBook(Integer id) {
+    public Book findByIdBook(long id) {
         return bookRepository.findById(id).get();
+    }
+
+    @Override
+    public Book saveBook(Book book) {
+        return bookRepository.save(book);
     }
 }

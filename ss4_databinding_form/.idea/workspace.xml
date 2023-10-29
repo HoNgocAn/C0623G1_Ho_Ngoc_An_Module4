@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66d33fb9-b5e0-4f6e-b82c-7bb12a5acbda" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ss2_spring_controller/bai_tap/sandwich/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss2_spring_controller/bai_tap/sandwich/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_jpa/bai_tap/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../ss6_jpa/bai_tap/blog.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8_validation/bai_tap/validate-song/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_validation/bai_tap/validate-song/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8_validation/bai_tap/validate-song/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8_validation/bai_tap/validate-song/src/main/resources/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2XN7aFu5uf2TAaQdqY19GmgcJGQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss4_databinding_form"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66d33fb9-b5e0-4f6e-b82c-7bb12a5acbda" name="Changes" comment="" />
+      <created>1698457744380</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698457744380</updated>
+      <workItem from="1698457745569" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

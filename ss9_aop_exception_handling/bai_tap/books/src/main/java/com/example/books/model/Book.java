@@ -1,28 +1,40 @@
 package com.example.books.model;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
+
     private String name;
-    private String image;
-    private String author;
-    private Integer count;
-    @OneToMany(mappedBy = "id")
-    private Set<Rental> rentals;
+
+    private int count;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "oder_book",
+            joinColumns = @JoinColumn (name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "oder_id")
+    )
+    List<Oder> list;
 
     public Book() {
     }
 
-    public Integer getId() {
+    public Book(String name, int count, List<Oder> list) {
+        this.name = name;
+        this.count = count;
+        this.list = list;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -34,35 +46,19 @@ public class Book {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(int count) {
         this.count = count;
     }
 
-    public String getImage() {
-        return image;
+    public List<Oder> getList() {
+        return list;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public Set<Rental> getRentals() {
-        return rentals;
-    }
-
-    public void setRentals(Set<Rental> rentals) {
-        this.rentals = rentals;
+    public void setList(List<Oder> list) {
+        this.list = list;
     }
 }

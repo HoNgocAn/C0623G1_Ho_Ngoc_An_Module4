@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f4a48536-50e0-4c34-871b-25082c42331a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/java/com/example/demo/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss4_databinding_form/bai_tap/mail",
+    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss2_spring_controller/bai_tap/sandwich",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -166,6 +174,7 @@
       <workItem from="1697512316483" duration="156000" />
       <workItem from="1697618287712" duration="117000" />
       <workItem from="1697620728620" duration="1122000" />
+      <workItem from="1698130711010" duration="640000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head >
+  <title>ListBlog</title>
+</head>
+<body>
+<div class="container">
+  <a class="btn btn-primary my-3" th:href="@{/customer/add}" role="button">Add new BLog</a></br></br>
+  <table class="table mt-3" style="width: 60%">
+    <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+
+      <th scope="col" colspan="3">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer,loop : ${customer}">
+      <th th:text="${loop.count}" scope="row"></th>
+      <td th:text="${customer.name}"></td>
+      <td th:text="${customer.email}"></td>
+      <td th:text="${customer.address}"></td>
+      <td><a th:href="@{/customer/__${customer.id}__/view}">View</a></td>
+      <td><a th:href="@{/customer/__${customer.id}__/edit}">Edit</a></td>
+      <td>
+        <button th:attr="onclick=|sendData('${customer.id}','${customer.name}')|" type="button" class="btn btn-danger"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Detele
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">Notification</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body-delete">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a role="button" id="del-product" class="btn btn-danger">Confirm</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function sendData(id, name) {
+    console.log(id);
+    console.log(name);
+    document.getElementById("modal-body-delete").innerHTML = "You definitely want to delete the blog " + name;
+    document.getElementById("del-product").href = "/customer/" + id + "/delete";
+  }
+</script>
+</body>
+</html>

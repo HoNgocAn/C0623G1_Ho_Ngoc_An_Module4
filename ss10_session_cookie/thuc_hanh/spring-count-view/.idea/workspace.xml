@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="82b36ffd-abd1-460b-b1ef-03feade1e281" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/sandwich/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_spring_controller/bai_tap/sandwich/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss6_jpa/bai_tap/blog.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/ShoppingCartApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/controller/ShoppingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/model/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/repository/IProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/service/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/java/com/example/shoppingcart/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/resources/templates/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/resources/templates/error_404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/main/resources/templates/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/bai_tap/shopping-cart/src/test/java/com/example/shoppingcart/ShoppingCartApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XO4SrseeeniurSyBvWJmybmgxo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/C0623G1_Ho_Ngoc_An_Module_4/C0623G1_Ho_Ngoc_An_Module4/ss8_validation/bai_tap/validate-song&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;bff0f5d0406c3a187a09d9574204c0f8&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="spring-count-view" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="spring-count-view" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringCountViewApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-count-view.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springcountview.SpringCountViewApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82b36ffd-abd1-460b-b1ef-03feade1e281" name="Changes" comment="" />
+      <created>1698486794652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698486794652</updated>
+      <workItem from="1698486795914" duration="718000" />
+      <workItem from="1698487570416" duration="282000" />
+      <workItem from="1698497966566" duration="261000" />
+      <workItem from="1698498399342" duration="258000" />
+      <workItem from="1698498672815" duration="168000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
