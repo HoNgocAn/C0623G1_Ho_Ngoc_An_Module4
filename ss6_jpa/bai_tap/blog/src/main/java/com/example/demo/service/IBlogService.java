@@ -1,25 +1,21 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Blog;
+import com.example.demo.model.Category;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBlogService {
-    Page<Blog> getAllBlog(Pageable pageable);
+    Iterable<Blog> findAllBlog();
 
-    List<Blog> getAllBlog();
+    Optional<Blog> findByIdBlog(Integer id);
 
-    Blog findById(Integer id);
+    Blog saveBlog(Blog blog);
 
-    void createBlog(Blog blog);
-
-    void deleteBlog(Integer id);
-
-    void updateBlog(Integer id, Blog blog);
-
-    List<Blog> getBlogByCategoryId(Integer categoryId);
+    void removeBlog(Integer id);
 }
 
 

@@ -2,12 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head >
     <title>ListBlog</title>
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">-->
 </head>
 <body>
 
 <div class="container">
     <a class="btn btn-primary my-3" th:href="@{/blog/add}" role="button">Add new BLog</a></br></br>
-    <table class="table mt-3" style="width: 60%">
+    <table class="table table-striped table-dark" style="width: 60%; text-align: center">
         <thead>
         <tr>
             <th scope="col">STT</th>
@@ -15,6 +17,7 @@
             <th scope="col">Summary</th>
             <th scope="col">Author</th>
             <th scope="col">TimePost</th>
+            <th scope="col">Category</th>
             <th scope="col" colspan="3">Action</th>
         </tr>
         </thead>
@@ -25,6 +28,7 @@
             <td th:text="${blog.summary}"></td>
             <td th:text="${blog.author}"></td>
             <td th:text="${blog.timePost}"></td>
+            <td th:text="${blog.category.name}"></td>
             <td><a th:href="@{/blog/__${blog.id}__/view}">View</a></td>
             <td><a th:href="@{/blog/__${blog.id}__/edit}">Edit</a></td>
             <td>

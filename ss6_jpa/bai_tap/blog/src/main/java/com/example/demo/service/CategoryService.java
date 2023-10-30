@@ -8,39 +8,31 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService implements ICategoryService{
     @Autowired
     private ICategoryRepository categoryRepository;
 
+
     @Override
-    public List<Category> findAllCategory() {
+    public Iterable<Category> findAllCategory() {
         return categoryRepository.findAll();
     }
 
     @Override
-    public Page<Category> findAllCategory(Pageable pageable) {
-        return categoryRepository.findAll(pageable);
+    public Optional<Category> findByIdCategory(Integer id) {
+        return categoryRepository.findById(id);
     }
 
     @Override
-    public void createCategory(Category category) {
-        categoryRepository.save(category);
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
     }
 
     @Override
-    public void updateCategory(Category category) {
-        categoryRepository.save(category);
-    }
-
-    @Override
-    public void deleteCategory(Integer id) {
+    public void removeCategory(Integer id) {
         categoryRepository.deleteById(id);
-    }
-
-    @Override
-    public Category findCategoryById(Integer id) {
-        return categoryRepository.findById(id).get();
     }
 }

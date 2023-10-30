@@ -19,6 +19,11 @@ public class Category {
     public Category() {
     }
 
+    public Category(Integer id, String categoryName) {
+        this.id = id;
+        this.categoryName = categoryName;
+    }
+
     public Category(Integer id, String categoryName, Set<Blog> blog) {
         this.id = id;
         this.categoryName = categoryName;

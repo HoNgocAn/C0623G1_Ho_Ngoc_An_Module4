@@ -5,13 +5,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICategoryService {
 
-    List<Category> findAllCategory();
-    Page<Category> findAllCategory(Pageable pageable);
-    void createCategory(Category category);
-    void updateCategory(Category category);
-    void deleteCategory(Integer id);
-    Category findCategoryById(Integer id);
+    Iterable<Category> findAllCategory();
+
+    Optional<Category> findByIdCategory(Integer id);
+
+    Category saveCategory(Category category);
+
+    void removeCategory(Integer id);
 }

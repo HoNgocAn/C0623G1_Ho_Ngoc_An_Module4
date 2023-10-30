@@ -2,6 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head >
   <title>Add-Blog</title>
+  <head> <h2>Header</h2>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  </head>
 </head>
 <body>
 <h2 class="my-5">Add new Blog</h2>
@@ -37,6 +41,12 @@
         <input type="text" th:field="${blog.timePost}" >
       </td>
     </tr>
+    <div class="mb-3">
+      <label for="category">Category:</label>
+      <select type="text" class="form-control" id="category" th:field="*{category}">
+        <option th:each="item:${categoryList}" th:text="${item.name}" th:value="${item.id}"></option>
+      </select>
+    </div>
   </table>
   <tr>
     <button class="btn btn-primary" type="submit">Add Blog</button>

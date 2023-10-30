@@ -12,7 +12,6 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "blogName")
     private String name;
     private String summary;
 
