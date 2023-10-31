@@ -17,7 +17,7 @@ public interface IBlogService {
     void updateBlog(Blog blog);
     void deleteBlog(Integer id);
     List<Blog> getBlogByCategoryId(Integer categoryId);
-    List<Blog> searchBlogByTitleContaining(String title);
+//    List<Blog> searchBlogByTitleContaining(String title);
 }
 
 

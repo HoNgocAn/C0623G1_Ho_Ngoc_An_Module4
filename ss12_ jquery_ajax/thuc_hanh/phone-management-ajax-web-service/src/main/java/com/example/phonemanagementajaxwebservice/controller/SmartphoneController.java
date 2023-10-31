@@ -1,0 +1,30 @@
+package com.example.phonemanagementajaxwebservice.controller;
+
+
+import com.example.phonemanagementajaxwebservice.model.Smartphone;
+import com.example.phonemanagementajaxwebservice.service.ISmartphoneService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("api/smartphones")
+public class SmartphoneController {
+    @Autowired
+    private ISmartphoneService smartphoneService;
+
+    @GetMapping
+    public ResponseEntity<Iterable<Smartphone>> findAllSmartphone() {
+        return new ResponseEntity<>(smartphoneService.findAll(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone){
+        return new ResponseEntity<>(smartphoneService.save(smartphone), HttpStatus.CREATED);
+    }
+
+}

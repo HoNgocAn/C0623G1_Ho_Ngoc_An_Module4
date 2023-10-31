@@ -38,7 +38,7 @@ public class CategoryController {
     @PostMapping("/add")
     public String saveCategory(@ModelAttribute Category category){
         categoryService.createCategory(category);
-        return "redirect:/";
+        return "redirect:/category/list";
     }
 
     @GetMapping("/{id}/view")

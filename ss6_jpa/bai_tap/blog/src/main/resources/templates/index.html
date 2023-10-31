@@ -22,17 +22,17 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="blog,loop : ${blog}">
+        <tr th:each="b,loop : ${blog}">
             <th th:text="${loop.count}" scope="row"></th>
-            <td th:text="${blog.name}"></td>
-            <td th:text="${blog.summary}"></td>
-            <td th:text="${blog.author}"></td>
-            <td th:text="${blog.timePost}"></td>
-            <td th:text="${blog.category.name}"></td>
-            <td><a th:href="@{/blog/__${blog.id}__/view}">View</a></td>
-            <td><a th:href="@{/blog/__${blog.id}__/edit}">Edit</a></td>
+            <td th:text="${b.name}"></td>
+            <td th:text="${b.summary}"></td>
+            <td th:text="${b.author}"></td>
+            <td th:text="${b.timePost}"></td>
+            <td th:text="${b.category.categoryName}"></td>
+            <td><a th:href="@{/blog/__${b.id}__/view}">View</a></td>
+            <td><a th:href="@{/blog/__${b.id}__/edit}">Edit</a></td>
             <td>
-                <button th:attr="onclick=|sendData('${blog.id}','${blog.name}')|" type="button" class="btn btn-danger"
+                <button th:attr="onclick=|sendData('${b.id}','${b.name}')|" type="button" class="btn btn-danger"
                         data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Detele
                 </button>
@@ -42,10 +42,10 @@
     </table>
     <nav aria-label="Page navigation example">
         <ol class="pagination justify-content-center">
-            <li th:class="${blog.hasPrevious() ? 'page-item' : 'page-item disabled'}">
+            <li th:if="${blog.hasPrevious()}">
                 <a class="page-link" th:href="@{/blog/list/(page=${blog.number - 1})}">Last</a>
             </li>
-            <li th:class="${blog.hasNext() ? 'page-item' : 'page-item disabled'}">
+            <li th:if="${blog.hasNext()}">
                 <a class="page-link" th:href="@{/blog/list/(page=${blog.number + 1})}">Next</a>
             </li>
         </ol>

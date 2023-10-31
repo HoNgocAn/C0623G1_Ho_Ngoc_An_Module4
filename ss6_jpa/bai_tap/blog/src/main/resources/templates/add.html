@@ -39,6 +39,15 @@
         <input type="text" th:field="${blog.timePost}" >
       </td>
     </tr>
+    <tr>
+      <td><label>
+        Category
+      </label>
+        <select th:field="*{category}">
+          <option th:each="cate:${categoryList}" th:text="${cate.categoryName}" th:value="${cate.id}"></option>
+        </select>
+      </td>
+    </tr>
   </table>
   <tr>
     <button class="btn btn-primary" type="submit">Add Blog</button>

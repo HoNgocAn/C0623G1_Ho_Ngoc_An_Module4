@@ -37,7 +37,7 @@ public class BlogController {
 
     @GetMapping("/blog/add")
     public ModelAndView showFormAdd(Model model){
-        model.addAttribute("category",categoryService.findAllCategory());
+        model.addAttribute("categoryList",categoryService.findAllCategory());
         return new ModelAndView("add","blog",new Blog());
     }
 
@@ -70,8 +70,8 @@ public class BlogController {
         return "redirect:/blog/list";
     }
 
-    @PostMapping("/blog/search")
-    public ModelAndView searchByTitle(@RequestParam(value = "title-search") String titleSearch) {
-        return new ModelAndView("index","blogs", blogService.searchBlogByTitleContaining(titleSearch));
-    }
+//    @PostMapping("/blog/search")
+//    public ModelAndView searchByTitle(@RequestParam(value = "title-search") String titleSearch) {
+//        return new ModelAndView("index","blogs", blogService.searchBlogByTitleContaining(titleSearch));
+//    }
 }

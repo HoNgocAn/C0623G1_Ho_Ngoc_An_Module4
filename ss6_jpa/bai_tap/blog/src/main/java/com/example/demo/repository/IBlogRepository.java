@@ -12,5 +12,5 @@ public interface IBlogRepository extends JpaRepository<Blog,Integer> {
     String getSummaryById(@Param("param") Integer id);
     @Query(nativeQuery = true,value = "select * from Blog where id_category = :param")
     List<Blog> getBlogByCategoryId(@Param("param") Integer idCategory);
-    List<Blog> searchBlogByTitleContaining(String title);
+
 }

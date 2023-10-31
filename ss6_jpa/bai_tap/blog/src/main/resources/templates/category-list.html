@@ -18,11 +18,11 @@
     <tbody>
     <tr th:each="value,loop : ${category}">
       <th th:text="${loop.count}" scope="row"></th>
-      <td th:text="${value.name}"></td>
+      <td th:text="${value.categoryName}"></td>
       <td><a th:href="@{/category/__${value.id}__/view}">View </a></td>
       <td><a th:href="@{/category/__${value.id}__/edit}">Edit</a></td>
       <td>
-        <button th:attr="onclick=|sendData('${value.id}','${value.name}')|" type="button" class="btn btn-danger"
+        <button th:attr="onclick=|sendData('${value.id}','${value.categoryName}')|" type="button" class="btn btn-danger"
                 data-bs-toggle="modal" data-bs-target="#exampleModal">
           Detele
         </button>
