@@ -57,7 +57,7 @@ function successHandler() {
         </tr>`
             }
             content += "</table>"
-            document.getElementById('smartphoneList').innerHTML = content;
+            document.getElementById('BlogList').innerHTML = content;
         }
     });
 }
