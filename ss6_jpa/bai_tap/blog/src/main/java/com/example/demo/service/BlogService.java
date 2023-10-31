@@ -16,25 +16,48 @@ public class BlogService implements IBlogService{
 
     @Autowired
     private IBlogRepository blogRepository;
-
+    @Override
+    public Page<Blog> findAllBlog(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
 
     @Override
-    public Iterable<Blog> findAllBlog() {
+    public List<Blog> findAllBlog() {
         return blogRepository.findAll();
     }
 
     @Override
-    public Optional<Blog> findByIdBlog(Integer id) {
-        return blogRepository.findById(id);
+    public void createBlog(Blog blog) {
+        blogRepository.save(blog);
     }
 
     @Override
-    public Blog saveBlog(Blog blog) {
-        return blogRepository.save(blog);
+    public String getSummaryById(Integer id) {
+        return blogRepository.getSummaryById(id);
     }
 
     @Override
-    public void removeBlog(Integer id) {
+    public Blog findBlogById(Integer id) {
+        return blogRepository.findById(id).get();
+    }
+
+    @Override
+    public void updateBlog(Blog blog) {
+        blogRepository.save(blog);
+    }
+
+    @Override
+    public void deleteBlog(Integer id) {
         blogRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Blog> getBlogByCategoryId(Integer categoryId) {
+        return blogRepository.getBlogByCategoryId(categoryId);
+    }
+
+    @Override
+    public List<Blog> searchBlogByTitleContaining(String title) {
+        return blogRepository.searchBlogByTitleContaining(title);
     }
 }

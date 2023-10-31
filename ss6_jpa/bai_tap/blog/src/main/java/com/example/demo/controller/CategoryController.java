@@ -16,18 +16,52 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/category")
+@Controller
+@RequestMapping("/category")
 public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
 
-    @GetMapping
-    public ResponseEntity<Iterable<Category>> findAllCategory() {
-        List<Category> categories = (List<Category>) categoryService.findAllCategory();
-        if (categories.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(categories, HttpStatus.OK);
+    @Autowired
+    private IBlogService blogService;
+
+    @GetMapping("/list")
+    public ModelAndView showListCategory(@PageableDefault(value = 2) Pageable pageable){
+        return new ModelAndView("category-list","category",categoryService.findAllCategory(pageable));
+    }
+
+    @GetMapping("/add")
+    public ModelAndView showFormAdd(){
+        return new ModelAndView("add-category","category",new Category());
+    }
+
+    @PostMapping("/add")
+    public String saveCategory(@ModelAttribute Category category){
+        categoryService.createCategory(category);
+        return "redirect:/";
+    }
+
+    @GetMapping("/{id}/view")
+    public String viewDetailCategory(Model model, @PathVariable Integer id){
+        model.addAttribute("category", categoryService.findCategoryById(id));
+        model.addAttribute("blogs", blogService.getBlogByCategoryId(id));
+        return "view-category";
+    }
+
+    @GetMapping("/{id}/edit")
+    public ModelAndView showFormEdit(@PathVariable Integer id){
+        return new ModelAndView("edit-category","category", categoryService.findCategoryById(id));
+    }
+
+    @PostMapping("/{id}/edit")
+    public String updateCategory(@ModelAttribute Category category){
+        categoryService.updateCategory(category);
+        return "redirect:/list";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteCategory(@PathVariable Integer id){
+        categoryService.deleteCategory(id);
+        return "redirect:/list";
     }
 }

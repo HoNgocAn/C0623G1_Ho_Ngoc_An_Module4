@@ -1,5 +1,4 @@
-package com.example.demo.model;
-
+package com.example.extendedblog.model;
 
 import javax.persistence.*;
 import java.util.Set;

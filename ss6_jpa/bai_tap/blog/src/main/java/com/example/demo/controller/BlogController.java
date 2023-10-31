@@ -4,24 +4,20 @@ import com.example.demo.model.Blog;
 import com.example.demo.service.IBlogService;
 import com.example.demo.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
+
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-import java.util.Optional;
+
 
 @Controller
-@RequestMapping("/api/blog")
+@RequestMapping
 public class BlogController {
-
     @Autowired
     private IBlogService blogService;
 
@@ -30,19 +26,52 @@ public class BlogController {
 
 
     @GetMapping
-    public ResponseEntity<Iterable<Blog>> findAllBlog() {
-        List<Blog> blogs = (List<Blog>) blogService.findAllBlog();
-        if (blogs.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(blogs, HttpStatus.OK);
+    public ModelAndView showHome(){
+        return new ModelAndView("index","blog",blogService.findAllBlog());
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<Blog> findBlogById(@PathVariable Integer id){
-        Optional<Blog> customerOptional = blogService.findByIdBlog(id);
-        if(!customerOptional.isPresent()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(customerOptional.get(), HttpStatus.OK);
+
+    @GetMapping("/blog/list")
+    public ModelAndView showList(@PageableDefault(value = 2,sort = "timePost",direction = Sort.Direction.DESC) Pageable pageable) {
+        return new ModelAndView("index","blog",blogService.findAllBlog(pageable));
+    }
+
+    @GetMapping("/blog/add")
+    public ModelAndView showFormAdd(Model model){
+        model.addAttribute("category",categoryService.findAllCategory());
+        return new ModelAndView("add","blog",new Blog());
+    }
+
+    @PostMapping("/blog/add")
+    public String saveBlog(@ModelAttribute Blog blog){
+        blogService.createBlog(blog);
+        return "redirect:/blog/list";
+    }
+
+    @GetMapping("/blog/{id}/view")
+    public ModelAndView viewDetailBlog(@PathVariable Integer id){
+        return new ModelAndView("view","blog", blogService.findBlogById(id));
+    }
+
+    @GetMapping("/blog/{id}/edit")
+    public ModelAndView showFormEdit(@PathVariable Integer id, Model model){
+        model.addAttribute("category",categoryService.findAllCategory());
+        return new ModelAndView("edit","blog", blogService.findBlogById(id));
+    }
+
+    @PostMapping("/blog/{id}/edit")
+    public String updateBlog(@ModelAttribute Blog blog){
+        blogService.updateBlog(blog);
+        return "redirect:/blog/list";
+    }
+
+    @GetMapping("/blog/{id}/delete")
+    public String deleteBlog(@PathVariable Integer id){
+        blogService.deleteBlog(id);
+        return "redirect:/blog/list";
+    }
+
+    @PostMapping("/blog/search")
+    public ModelAndView searchByTitle(@RequestParam(value = "title-search") String titleSearch) {
+        return new ModelAndView("index","blogs", blogService.searchBlogByTitleContaining(titleSearch));
     }
 }

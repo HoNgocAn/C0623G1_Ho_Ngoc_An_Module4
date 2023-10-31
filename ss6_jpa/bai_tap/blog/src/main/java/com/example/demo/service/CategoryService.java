@@ -11,28 +11,37 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryService implements ICategoryService{
+public class CategoryService implements ICategoryService {
+
     @Autowired
-    private ICategoryRepository categoryRepository;
-
-
+    private ICategoryRepository categoryRepo;
     @Override
-    public Iterable<Category> findAllCategory() {
-        return categoryRepository.findAll();
+    public List<Category> findAllCategory() {
+        return categoryRepo.findAll();
     }
 
     @Override
-    public Optional<Category> findByIdCategory(Integer id) {
-        return categoryRepository.findById(id);
+    public Page<Category> findAllCategory(Pageable pageable) {
+        return categoryRepo.findAll(pageable);
     }
 
     @Override
-    public Category saveCategory(Category category) {
-        return categoryRepository.save(category);
+    public void createCategory(Category category) {
+        categoryRepo.save(category);
     }
 
     @Override
-    public void removeCategory(Integer id) {
-        categoryRepository.deleteById(id);
+    public void updateCategory(Category category) {
+        categoryRepo.save(category);
+    }
+
+    @Override
+    public void deleteCategory(Integer id) {
+        categoryRepo.delete(findCategoryById(id));
+    }
+
+    @Override
+    public Category findCategoryById(Integer id) {
+        return categoryRepo.findById(id).get();
     }
 }

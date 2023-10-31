@@ -9,13 +9,15 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IBlogService {
-    Iterable<Blog> findAllBlog();
-
-    Optional<Blog> findByIdBlog(Integer id);
-
-    Blog saveBlog(Blog blog);
-
-    void removeBlog(Integer id);
+    Page<Blog> findAllBlog(Pageable pageable);
+    List<Blog> findAllBlog();
+    void createBlog(Blog blog);
+    String getSummaryById(Integer id);
+    Blog findBlogById(Integer id);
+    void updateBlog(Blog blog);
+    void deleteBlog(Integer id);
+    List<Blog> getBlogByCategoryId(Integer categoryId);
+    List<Blog> searchBlogByTitleContaining(String title);
 }
 
 
