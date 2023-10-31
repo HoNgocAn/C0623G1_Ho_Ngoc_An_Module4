@@ -56,12 +56,12 @@ public class CategoryController {
     @PostMapping("/{id}/edit")
     public String updateCategory(@ModelAttribute Category category){
         categoryService.updateCategory(category);
-        return "redirect:/list";
+        return "redirect:/category/list";
     }
 
     @GetMapping("/{id}/delete")
     public String deleteCategory(@PathVariable Integer id){
         categoryService.deleteCategory(id);
-        return "redirect:/list";
+        return "redirect:/category/list";
     }
 }
