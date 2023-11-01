@@ -31,10 +31,6 @@ public class BlogService implements IBlogService{
         blogRepository.save(blog);
     }
 
-    @Override
-    public String getSummaryById(Integer id) {
-        return blogRepository.getSummaryById(id);
-    }
 
     @Override
     public Blog findBlogById(Integer id) {
@@ -56,8 +52,4 @@ public class BlogService implements IBlogService{
         return blogRepository.getBlogByCategoryId(categoryId);
     }
 
-//    @Override
-//    public List<Blog> searchBlogByTitleContaining(String title) {
-//        return blogRepository.searchBlogByTitleContaining(title);
-//    }
 }

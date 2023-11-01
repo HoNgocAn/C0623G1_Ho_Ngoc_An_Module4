@@ -24,29 +24,7 @@ function addNewSmartPhone() {
     //chặn sự kiện mặc định của thẻ
     event.preventDefault();
 }
-// function successHandler() {
-//     $.ajax({
-//         type: "GET",
-//         //tên API
-//         url: "http://localhost:8080/api/smartphones",
-//         //xử lý khi thành công
-//         success: function (data) {
-//             console.log(data)
-//             // hiển thị danh sách ở đây
-//             let content = ' <table id="display-list" border="1"><tr>\n' +
-//                 ' <th>Producer</td>\n' +
-//                 ' <th>Model</td>\n' +
-//                 ' <th>Price</td>\n' +
-//                 ' <th>Delete</td>\n' +
-//                 ' </tr>';
-//             for (let i = 0; i < data.length; i++) {
-//                 content += getSmartphone(data[i]);
-//             }
-//             content += "</table>"
-//             document.getElementById('smartphoneList').innerHTML = content;
-//         }
-//     });
-// }
+
 function successHandler() {
     $.ajax({
         type: "GET",
@@ -62,11 +40,12 @@ function successHandler() {
                 ' <th>Delete</td>\n' +
                 ' </tr>';
             for (let i = 0; i < data.length; i++) {
-                content += `<tr>
-<td>${data[i].producer}</td>
-<td>${data[i].model}</td>
-<td>${data[i].price}</td>
-</tr>`
+                content += `
+        <tr>
+            <td>${data[i].producer}</td>
+            <td>${data[i].model}</td>
+            <td>${data[i].price}</td>
+        </tr>`
             }
             content += "</table>"
             document.getElementById('smartphoneList').innerHTML = content;
@@ -79,8 +58,8 @@ function displayFormCreate() {
     document.getElementById('display-create').style.display = "none";
     document.getElementById('title').style.display = "none";
 }
-//
-// function getSmartphone(smartphone) {
-//     return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
-//         `<td class="btn"><button class="deleteSmartphone" onclick="deleteSmartphone(${smartphone.id})">Delete</button></td></tr>`;
-// }
+
+function getSmartphone(smartphone) {
+    return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
+        `<td class="btn"><button class="deleteSmartphone" onclick="deleteSmartphone(${smartphone.id})">Delete</button></td></tr>`;
+}

@@ -12,7 +12,7 @@ public interface IBlogService {
     Page<Blog> findAllBlog(Pageable pageable);
     List<Blog> findAllBlog();
     void createBlog(Blog blog);
-    String getSummaryById(Integer id);
+
     Blog findBlogById(Integer id);
     void updateBlog(Blog blog);
     void deleteBlog(Integer id);

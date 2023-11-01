@@ -70,8 +70,4 @@ public class BlogController {
         return "redirect:/blog/list";
     }
 
-//    @PostMapping("/blog/search")
-//    public ModelAndView searchByTitle(@RequestParam(value = "title-search") String titleSearch) {
-//        return new ModelAndView("index","blogs", blogService.searchBlogByTitleContaining(titleSearch));
-//    }
 }
