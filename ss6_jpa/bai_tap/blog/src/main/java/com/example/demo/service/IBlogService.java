@@ -17,6 +17,7 @@ public interface IBlogService {
     void updateBlog(Blog blog);
     void deleteBlog(Integer id);
     List<Blog> getBlogByCategoryId(Integer categoryId);
+    Page<Blog> pageBlog(Pageable pageable,String name);
 }
 
 

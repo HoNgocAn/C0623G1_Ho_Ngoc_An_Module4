@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.xml.soap.Name;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +51,11 @@ public class BlogService implements IBlogService{
     @Override
     public List<Blog> getBlogByCategoryId(Integer categoryId) {
         return blogRepository.getBlogByCategoryId(categoryId);
+    }
+
+    @Override
+    public Page<Blog> pageBlog(Pageable pageable, String name) {
+        return blogRepository.findBlogByNameContaining(pageable,name);
     }
 
 }

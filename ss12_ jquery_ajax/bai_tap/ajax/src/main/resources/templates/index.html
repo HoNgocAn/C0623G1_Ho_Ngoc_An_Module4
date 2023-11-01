@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div>
+  <input type="text" id="search" placeholder="Nhập tên vào đây">
+  <button id="btn-search">Tìm kiếm</button>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Summary</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+ <tbody>
+
+ </tbody>
+</table>
+<button id="btn-add-data">Tải thêm</button>
+<script src="../static/jquery-3.7.1.min.js"></script>
+<script>
+  let page = 0;
+  $(document).ready(function () {
+    function init(page){
+      $.ajax({
+        url : `http://localhost:8080/api/blog?page=${page}`,
+        type: 'GET',
+        data: 'json',
+        success: function (data){
+          data = data.content
+          console.log(data)
+          let content = '';
+          for (let i = 0; i < data.length; i++) {
+            content += `<tr>
+                             <td>${data[i].id}</td>
+                             <td>${data[i].name}</td>
+                             <td>${data[i].summary}</td>
+                             <td>${data[i].timePost}</td>
+                        </tr>`;
+          }
+          $("tbody").append(content)
+        }
+      })
+    }
+    init(page)
+    $("#btn-search").click(function () {
+      let search = $("#search").val()
+      $.ajax({
+        url : `http://localhost:8080/api/blog?name=${search}`,
+        type: 'GET',
+        data: 'json',
+        success: function (data){
+          data = data.content
+          console.log(data)
+          let content = '';
+          for (let i = 0; i < data.length; i++) {
+            content += `<tr>
+                             <td>${data[i].id}</td>
+                             <td>${data[i].name}</td>
+                             <td>${data[i].summary}</td>
+                             <td>${data[i].timePost}</td>
+                        </tr>`;
+          }
+          $("tbody").append(content)
+        }
+      })
+      $("tbody").empty()
+    })
+      $("#btn-add-data").click(function () {
+          page++
+          init(page)
+      })
+  })
+</script>
+</body>
+</html>
